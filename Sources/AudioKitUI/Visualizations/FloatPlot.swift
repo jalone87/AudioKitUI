@@ -195,13 +195,13 @@ extension FloatPlot: MTKViewDelegate {
 
 #if !os(visionOS)
 public class FloatPlotCoordinator {
-    var renderer: FloatPlot
+    public var renderer: FloatPlot
 
-    init(renderer: FloatPlot) {
+    public init(renderer: FloatPlot) {
         self.renderer = renderer
     }
 
-    var view: MTKView {
+    public var view: MTKView {
         let view = MTKView(frame: CGRect(x: 0, y: 0, width: 1024, height: 1024), device: renderer.device)
         view.clearColor = .init(red: 0.0, green: 0.0, blue: 0.0, alpha: 0)
         view.delegate = renderer
@@ -210,13 +210,13 @@ public class FloatPlotCoordinator {
 }
 #else
 public class FloatPlotCoordinator {
-    var renderer: FloatPlot
+    public var renderer: FloatPlot
 
-    init(renderer: FloatPlot) {
+    public init(renderer: FloatPlot) {
         self.renderer = renderer
     }
 
-    var view: MetalView {
+    public var view: MetalView {
         let view = MetalView(frame: CGRect(x: 0, y: 0, width: 1024, height: 1024))
         view.renderer = renderer
         view.metalLayer.pixelFormat = .bgra8Unorm
